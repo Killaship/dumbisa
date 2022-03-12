@@ -4,7 +4,9 @@ Like the name suggests, a dumb ISA.
 This project takes inspiration from the following sources:
 
 https://felix.engineer/blogs/virtual-machine-in-c
+
 https://github.com/felixangell/mac
+
 A big-ass stack of papers about this project from 2 years ago.
 
 I'd plan to have a decent bit of documentation, a proper VM, and maybe an assembler done.
