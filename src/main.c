@@ -12,7 +12,7 @@ int stack[64];
 #define stp (registers[sp])
 #define inp (registers[ip])
 
-const int prgm = {
+const int prgm[32] = {
 	push, 2,
 	push, 2,
 	add,
