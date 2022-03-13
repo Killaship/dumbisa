@@ -9,10 +9,10 @@ typedef enum {
 
 bool run = true;
 int stack[64];
-static int registers[numregisters];
-#define stp (registers[sp])
+reg registers[];
+int = stp (registers[sp])
 #define inp (registers[ip])
-stp = -1;
+registers[sp] = -1;
 
 const int prgm[32] = {
 	push, 2,
