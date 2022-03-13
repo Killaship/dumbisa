@@ -9,7 +9,7 @@ typedef enum {
 
 bool run = true;
 int stack[64];
-reg registers[];
+reg registers[numregisters];
 int = stp (registers[sp])
 #define inp (registers[ip])
 registers[sp] = -1;
@@ -30,7 +30,7 @@ void execute(int instruction) {
 	
 }
 
-void main() {
+int main(void) {
 	while(run) {
 		execute(fetch());
 		inp++;
