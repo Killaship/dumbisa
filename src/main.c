@@ -3,10 +3,10 @@
 typedef enum {
 	a, b, c, d, sp, ip, numregisters
 	} reg;
-#define hlt 0
-#define add 1
-#define push 2
-#define pop 3
+typedef enum {
+	push, pop, add, hlt
+	} isa;
+
 bool run = true;
 int stack[64];
 int registers[numregisters];
