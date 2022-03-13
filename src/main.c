@@ -18,7 +18,7 @@ const int prgm {
 	add,
 	pop,
 	hlt
-}
+};
 
 int fetch() {
 	return prgm[ip];
