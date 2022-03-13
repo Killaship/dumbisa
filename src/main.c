@@ -12,6 +12,7 @@ int stack[64];
 int registers[numregisters];
 #define stp (registers[sp])
 #define inp (registers[ip])
+stp = -1;
 
 const int prgm[32] = {
 	push, 2,
@@ -30,7 +31,6 @@ void execute(int instruction) {
 }
 
 void main() {
-	stp = -1;
 	while(run) {
 		execute(fetch());
 		inp++;
