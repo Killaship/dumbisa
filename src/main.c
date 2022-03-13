@@ -12,7 +12,7 @@ int stack[64];
 #define sp (registers[sp])
 #define ip (registers[ip])
 
-void main()
+void main() {
 	while(run) {
 		execute(fetch());
 		ip++;
