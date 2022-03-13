@@ -9,9 +9,10 @@ typedef enum {
 bool run = true;
 int stack[64];
 reg registers[numregisters];
-#defne = sp (registers[stp])
+#define = sp (registers[stp])
 #define ip (registers[inp])
 sp = -1;
+ip = 0;
 
 
 const int prgm[32] = {
@@ -23,7 +24,7 @@ const int prgm[32] = {
 };
 
 int fetch() {
-	return prgm[inp];
+	return prgm[p];
 }
 
 void execute(int instruction) {
@@ -33,6 +34,6 @@ void execute(int instruction) {
 int main(void) {
 	while(run) {
 		execute(fetch());
-		inp++;
+		ip++;
 	}
 }
