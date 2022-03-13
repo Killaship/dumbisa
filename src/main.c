@@ -9,8 +9,8 @@ typedef enum {
 #define pop 3
 bool run = true;
 int stack[64];
-#define sp (registers[sp])
-#define ip (registers[ip])
+#define stp (registers[sp])
+#define inp (registers[ip])
 
 const int prgm = {
 	push, 2,
@@ -21,7 +21,7 @@ const int prgm = {
 };
 
 int fetch() {
-	return prgm[ip];
+	return prgm[inp];
 }
 
 void execute(int instruction) {
@@ -29,9 +29,9 @@ void execute(int instruction) {
 }
 
 void main() {
-	sp = -1;
+	stp = -1;
 	while(run) {
 		execute(fetch());
-		ip++;
+		inp++;
 	}
 }
