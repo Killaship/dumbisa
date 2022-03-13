@@ -9,7 +9,7 @@ typedef enum {
 
 bool run = true;
 int stack[64];
-int registers[numregisters];
+static int registers[numregisters];
 #define stp (registers[sp])
 #define inp (registers[ip])
 stp = -1;
