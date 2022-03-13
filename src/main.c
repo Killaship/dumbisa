@@ -1,18 +1,18 @@
 #include <stdio.h>
 #include <stdbool.h>
 typedef enum {
-	a, b, c, d, sp, ip, numregisters
+	a, b, c, d, stp, inp, numregisters
 	} reg;
 typedef enum {
 	push, pop, add, hlt
 	} isa;
-
 bool run = true;
 int stack[64];
 reg registers[numregisters];
-int = stp (registers[sp])
-#define inp (registers[ip])
-registers[sp] = -1;
+#defne = sp (registers[stp])
+#define ip (registers[inp])
+sp = -1;
+
 
 const int prgm[32] = {
 	push, 2,
