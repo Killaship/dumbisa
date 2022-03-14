@@ -58,10 +58,10 @@ void execute(int instruction) { // Giant switch statement, basically.
 			printf("popped %d\n", popval);
 			printf("%d", sp);
 			break;
-		case set:
+		/*case set:
 			registers[prgm[ip + 1]] = prgm[ip + 2];
 			ip = ip + 2;
-			break;
+			break;*/
 	}
 }
 
