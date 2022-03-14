@@ -20,9 +20,8 @@ const int prgm[32] = {
 	push, 2,
 	add,
 	pop,
-	set, b, 4,
-	pushr, b,
-	pop,
+	//set, b, 4,
+	//pushr, b,
 	hlt
 };
 
