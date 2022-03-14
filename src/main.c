@@ -34,6 +34,7 @@ void execute(int instruction) { // Giant switch statement, basically.
 	int b;
 	int sum;
 	int popval;
+	int ip2;
 	switch(instruction) {
 		case hlt:
 			running = false;
@@ -55,7 +56,8 @@ void execute(int instruction) { // Giant switch statement, basically.
 			printf("popped %d\n", popval);
 			break;
 		case jmp:
-			ip = prgm[++ip];
+			ip2 = prgm[++ip];
+			ip = ip2;
 			break;
 	}
 }
