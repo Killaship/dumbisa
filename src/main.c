@@ -1,16 +1,17 @@
 #include <stdio.h>
 #include <stdbool.h>
-typedef enum {
-	a, b, c, d, sp, ip, numregisters // Four general-purpose registers, stack pointer, instruction pointer
-	} reg;
-int registers[numregisters]; // Declaration of the registers' arra#y
+//typedef enum {
+//	a, b, c, d, sp, ip, numregisters // Four general-purpose registers, stack pointer, instruction pointer
+//	} reg;
+//int registers[numregisters]; // Declaration of the registers' arra#y
 typedef enum {
 	push, pop, add, hlt, set, pushr
 	} isa; // ISA contained in a typedef enum
 bool running = true; // Runs by default, duh
 int stack[128];
 
-
+int ip = 0;
+int sp = -1;
 //#define sp (registers[sp])
 //#define ip (registers[ip])
 
