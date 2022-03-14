@@ -21,7 +21,7 @@ const int prgm[32] = {
 	push, 2,
 	add,
 	pop,
-	set, ip, 4,
+	set, b, 4,
 	hlt
 };
 
