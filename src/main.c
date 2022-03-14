@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 typedef enum {
-	a, b, c, d, stp, inp, numregisters // Four general-purpose registers, stack pointer, instruction pointer
+	a, b, c, d, sp, ip, numregisters // Four general-purpose registers, stack pointer, instruction pointer
 	} reg;
 int registers[numregisters]; // Declaration of the registers' array
 typedef enum {
@@ -10,9 +10,6 @@ typedef enum {
 bool running = true; // Runs by default, duh
 int stack[128];
 
-// Easier declaration of IP and SP
-#define sp (registers[stp]) 
-#define ip (registers[inp])
 
 
 
@@ -21,7 +18,7 @@ const int prgm[16] = { // Program
 	push, 2,
 	add,
 	pop,
-	set, inp, 0,
+	set, ip, -2,
 	hlt
 };
 
