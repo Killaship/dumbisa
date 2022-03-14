@@ -14,7 +14,7 @@ int stack[128];
 
 
 const int prgm[16] = {
-	set, ip, 7// Program
+	set, ip, 7,// Program
 	push, 4,
 	push, 4,
 	push, 2,
