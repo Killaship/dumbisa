@@ -15,7 +15,7 @@ int stack[64];
 
 
 
-const int prgm = {
+const int prgm[16] = {
 	push, 2,
 	push, 2,
 	add,
@@ -24,7 +24,7 @@ const int prgm = {
 };
 
 int fetch() {
-	return prgm[sp];
+	return prgm[ip];
 }
 
 void execute(int instruction) {
