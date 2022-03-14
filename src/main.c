@@ -15,7 +15,7 @@ int stack[64];
 
 
 
-const int prgm[32] = {
+const int prgm = {
 	push, 2,
 	push, 2,
 	add,
