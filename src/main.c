@@ -31,6 +31,22 @@ void execute(int instruction) {
 	switch(instruction) {
 		case hlt:
 			running = false;
+			printf("Done!\n");
+			break;
+		case add:
+			int a = stack[sp--];
+			int b = stack[sp--];
+			int sum = b + a;
+			sp++;
+			stack[sp] = sum;
+			break;
+		case push:
+			sp++;
+			stack[sp] = prgm[++ip];
+			break;
+		case pop:
+			int value = stack[sp--];
+			printf("pop: %d\n", value);
 			break;
 	}
 }
