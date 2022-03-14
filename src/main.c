@@ -55,7 +55,7 @@ void execute(int instruction) { // Giant switch statement, basically.
 			stack[sp] = prgm[++ip];
 			break;
 		case pop:
-			if(sp =< -1) {
+			if(sp <= -1) {
 				printf("Error: program tried to pop a nonexistent value.");
 				running = false;
 				break;
