@@ -21,8 +21,7 @@ const int prgm[16] = { // Program
 	push, 2,
 	add,
 	pop,
-	set, ip, 0,
-	//jmp, 0,
+	set, 4, 0,
 	hlt
 };
 
@@ -35,7 +34,6 @@ void execute(int instruction) { // Giant switch statement, basically.
 	int b;
 	int sum;
 	int popval;
-	int ip2;
 	switch(instruction) {
 		case hlt:
 			running = false;
