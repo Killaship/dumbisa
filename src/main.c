@@ -56,6 +56,7 @@ void execute(int instruction) { // Giant switch statement, basically.
 			break;
 		case jmp:
 			ip = prgm[++ip];
+			break;
 	}
 }
 
