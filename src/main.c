@@ -7,7 +7,7 @@ static int registers[numregisters];
 typedef enum {
 	push, pop, add, hlt
 	} isa;
-bool run = true;
+bool running = true;
 int stack[64];
 
 #define sp (registers[stp])
@@ -38,7 +38,7 @@ void execute(int instruction) {
 int main(void) {
 	sp = -1;
 	ip = 0;
-	while(run) {
+	while(running) {
 		execute(fetch());
 		ip++;
 	}
