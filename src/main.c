@@ -56,7 +56,7 @@ void execute(int instruction) { // Giant switch statement, basically.
 			stack[sp] = registers[++ip];
 			break; */
 		case pop:
-			popval = stack[sp - 1];
+			popval = stack[sp--];
 			printf("popped %d\n", popval);
 			printf("%d", sp);
 			break;
