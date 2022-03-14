@@ -21,7 +21,7 @@ const int prgm[16] = { // Program
 	push, 2,
 	add,
 	pop,
-	set, ip, 0
+	set, ip, 0,
 	//jmp, 0,
 	hlt
 };
@@ -63,7 +63,6 @@ void execute(int instruction) { // Giant switch statement, basically.
 			printf("%d", sp);
 			break;
 		case set:
-		
 			registers[prgm[ip + 1]] = prgm[ip + 2];
             		ip = ip + 2;
 			break;
