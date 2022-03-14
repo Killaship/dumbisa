@@ -12,8 +12,7 @@ int stack[64];
 
 #define sp (registers[stp])
 #define ip (registers[inp])
-sp = -1;
-ip = 0;
+
 
 
 const int prgm[32] = {
@@ -33,6 +32,8 @@ void execute(int instruction) {
 }
 
 int main(void) {
+	sp = -1;
+	ip = 0;
 	while(run) {
 		execute(fetch());
 		ip++;
