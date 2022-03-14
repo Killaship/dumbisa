@@ -17,12 +17,12 @@ int stack[128];
 
 
 const int prgm[16] = { // Program
+	//push, 2,
 	push, 2,
-	push, 2,
-	add,
+	//add,
 	pop,
 	set, 4, 0,
-	hlt
+	//hlt
 };
 
 int fetch() { // Fetch function
