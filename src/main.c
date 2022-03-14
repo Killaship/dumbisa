@@ -1,21 +1,22 @@
 #include <stdio.h>
 #include <stdbool.h>
 typedef enum {
-	a, b, c, d, stp, inp, numregisters
+	a, b, c, d, stp, inp, numregisters // Four general-purpose registers, stack pointer, instruction pointer
 	} reg;
-static int registers[numregisters];
+static int registers[numregisters]; // Declaration of the registers' array
 typedef enum {
 	push, pop, add, hlt
-	} isa;
-bool running = true;
+	} isa; // ISA contained in a typedef enum
+bool running = true; // Runs by default, duh
 int stack[64];
 
-#define sp (registers[stp])
+// Easier declaration of IP and SP
+#define sp (registers[stp]) 
 #define ip (registers[inp])
 
 
 
-const int prgm[16] = {
+const int prgm[16] = { // Program
 	push, 2,
 	push, 2,
 	add,
@@ -23,11 +24,11 @@ const int prgm[16] = {
 	hlt
 };
 
-int fetch() {
+int fetch() { // Fetch function
 	return prgm[ip];
 }
 
-void execute(int instruction) {
+void execute(int instruction) { // Giant switch statement, basically.
 	int a;
 	int b;
 	int sum;
