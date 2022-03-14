@@ -39,8 +39,8 @@ void execute(int instruction) { // Giant switch statement, basically.
 			printf("Done!\n");
 			break;
 		case add:
-			x = stack[sp--];
-			y = stack[sp--];
+			x = stack[--sp--];
+			y = stack[--sp--];
 			sum = y + x;
 			sp++;
 			stack[sp] = sum;
