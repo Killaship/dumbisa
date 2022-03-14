@@ -21,8 +21,8 @@ const int prgm[16] = { // Program
 	push, 2,
 	//add,
 	pop,
-	set, 4, 0,
-	//hlt
+	set, 5, 0,
+	hlt
 };
 
 int fetch() { // Fetch function
