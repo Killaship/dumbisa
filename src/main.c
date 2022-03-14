@@ -8,7 +8,7 @@ typedef enum {
 	push, pop, add, hlt, jmp
 	} isa; // ISA contained in a typedef enum
 bool running = true; // Runs by default, duh
-int stack[64];
+int stack[128];
 
 // Easier declaration of IP and SP
 #define sp (registers[stp]) 
