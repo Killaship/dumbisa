@@ -28,7 +28,11 @@ int fetch() {
 }
 
 void execute(int instruction) {
-	
+	switch(instruction) {
+		case hlt:
+			running = false;
+			break;
+	}
 }
 
 int main(void) {
