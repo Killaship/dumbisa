@@ -29,8 +29,8 @@ int fetch() { // Fetch function
 }
 
 void execute(int instruction) { // Giant switch statement, basically.
-	int a;
-	int b;
+	int x;
+	int y;
 	int sum;
 	int popval;
 	switch(instruction) {
@@ -39,9 +39,9 @@ void execute(int instruction) { // Giant switch statement, basically.
 			printf("Done!\n");
 			break;
 		case add:
-			a = stack[sp--];
-			b = stack[sp--];
-			sum = b + a;
+			x = stack[sp--];
+			y = stack[sp--];
+			sum = y + x;
 			sp++;
 			stack[sp] = sum;
 			break;
@@ -60,6 +60,7 @@ void execute(int instruction) { // Giant switch statement, basically.
 				break;
 			}
 			popval = stack[sp--];
+			registers[a] = popval;
 			printf("popped %d\n", popval);
 			printf("%d", sp);
 			break;
