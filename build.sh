@@ -1,3 +1,3 @@
 git pull
-gcc src/main.c vm -Wall
+gcc -Wall src/main.c vm 
 ./vm
