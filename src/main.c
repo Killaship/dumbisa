@@ -17,9 +17,9 @@ int stack[128];
 
 
 const int prgm[16] = { // Program
-	//push, 2,
 	push, 2,
-	//add,
+	push, 2,
+	add,
 	pop,
 	set, 5, 0,
 	hlt
