@@ -59,6 +59,7 @@ void execute(int instruction) { // Giant switch statement, basically.
 				printf("Error: program tried to pop a nonexistent value.");
 				running = false;
 				break;
+			}
 			popval = stack[sp--];
 			printf("popped %d\n", popval);
 			printf("%d", sp);
