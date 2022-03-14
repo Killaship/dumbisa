@@ -13,7 +13,7 @@ int stack[128];
 
 
 
-const int prgm[16] = {
+const int prgm[32] = {
 	set, ip, 7,// Program
 	push, 4,
 	push, 4,
