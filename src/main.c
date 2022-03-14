@@ -11,8 +11,8 @@ bool running = true; // Runs by default, duh
 int stack[128];
 
 
-#define sp (registers[sp])
-#define ip (registers[ip])
+//#define sp (registers[sp])
+//#define ip (registers[ip])
 
 
 const int prgm[32] = {
