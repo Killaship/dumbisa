@@ -3,12 +3,13 @@
 typedef enum {
 	a, b, c, d, stp, inp, numregisters
 	} reg;
+static int registers[numregisters];
 typedef enum {
 	push, pop, add, hlt
 	} isa;
 bool run = true;
 int stack[64];
-enum reg registers[numregisters];
+
 #define sp (registers[stp])
 #define ip (registers[inp])
 sp = -1;
