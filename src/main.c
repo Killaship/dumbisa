@@ -21,7 +21,7 @@ const int prgm[16] = { // Program
 	push, 2,
 	add,
 	pop,
-	set, 5, 0,
+	set, inp, 0,
 	hlt
 };
 
