@@ -28,15 +28,18 @@ int fetch() {
 }
 
 void execute(int instruction) {
+	int a;
+	int b;
+	int sum;
 	switch(instruction) {
 		case hlt:
 			running = false;
 			printf("Done!\n");
 			break;
 		case add:
-			int a = stack[sp--];
-			int b = stack[sp--];
-			int sum = b + a;
+			a = stack[sp--];
+			b = stack[sp--];
+			sum = b + a;
 			sp++;
 			stack[sp] = sum;
 			break;
@@ -46,7 +49,7 @@ void execute(int instruction) {
 			break;
 		case pop:
 			int value = stack[sp--];
-			printf("pop: %d\n", value);
+			printf("popped %d\n", value);
 			break;
 	}
 }
