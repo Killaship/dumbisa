@@ -31,6 +31,7 @@ void execute(int instruction) {
 	int a;
 	int b;
 	int sum;
+	int popval;
 	switch(instruction) {
 		case hlt:
 			running = false;
@@ -48,8 +49,8 @@ void execute(int instruction) {
 			stack[sp] = prgm[++ip];
 			break;
 		case pop:
-			int value = stack[sp--];
-			printf("popped %d\n", value);
+			popval = stack[sp--];
+			printf("popped %d\n", popval);
 			break;
 	}
 }
