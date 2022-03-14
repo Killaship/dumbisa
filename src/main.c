@@ -57,6 +57,7 @@ void execute(int instruction) { // Giant switch statement, basically.
 		case pop:
 			popval = stack[sp--];
 			printf("popped %d\n", popval);
+			printf("%d", sp)
 			break;
 		case jmp:
 			ip2 = prgm[++ip];
