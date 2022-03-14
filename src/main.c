@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdbool.h>
 typedef enum {
-	a, b, c, dnumregisters // Four general-purpose registers, stack pointer, instruction pointer
+	a, b, c, d, numregisters // Four general-purpose registers, stack pointer, instruction pointer
 	} reg;
 int registers[numregisters]; // Declaration of the registers' arra#y
 typedef enum {
-	push, pop, add, hlt, set, pushr
+	push, pop, add, hlt, mov, pushr, jmp
 	} isa; // ISA contained in a typedef enum
 bool running = true; // Runs by default, duh
 int stack[128];
@@ -57,6 +57,8 @@ void execute(int instruction) { // Giant switch statement, basically.
 			popval = stack[sp--];
 			printf("popped %d\n", popval);
 			printf("Current SP is %d.\n", sp);
+			break;
+		case mov:
 			break;
 		case jmp:
 			ip = prgm[ip + 1];
