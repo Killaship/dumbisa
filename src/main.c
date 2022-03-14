@@ -11,6 +11,8 @@ bool running = true; // Runs by default, duh
 int stack[128];
 
 
+#define sp (registers[SP])
+#define ip (registers[IP])
 
 
 const int prgm[32] = {
@@ -39,12 +41,12 @@ void execute(int instruction) { // Giant switch statement, basically.
 			printf("Done!\n");
 			break;
 		case add:
-			x = stack[sp - 1];
-			y = stack[sp - 1];
-			sum = y + x;
-			sp = sp + 1;
-			stack[sp] = sum;
-			break;
+	        x = stack[sp--];
+	        y = stack[sp--];
+	        sum = y + x;
+	        sp++; 
+	        stack[sp] = result; 
+
 		case push:
 			sp = sp + 1;
 			stack[sp] = prgm[++ip];
