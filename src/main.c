@@ -5,7 +5,7 @@ typedef enum {
 	} reg;
 int registers[numregisters]; // Declaration of the registers' arra#y
 typedef enum {
-	push, pop, add, hlt, set
+	push, pop, add, hlt, set, pushr
 	} isa; // ISA contained in a typedef enum
 bool running = true; // Runs by default, duh
 int stack[128];
@@ -14,14 +14,13 @@ int stack[128];
 
 
 const int prgm[32] = {
-	set, ip, 7,// Program
-	push, 4,
-	push, 4,
 	push, 2,
 	push, 2,
 	add,
 	pop,
 	set, b, 4,
+	pushr, b,
+	pop,
 	hlt
 };
 
@@ -49,6 +48,10 @@ void execute(int instruction) { // Giant switch statement, basically.
 		case push:
 			sp++;
 			stack[sp] = prgm[++ip];
+			break;
+		case pushr:
+			sp++;
+			stack[sp] = registers[++ip];
 			break;
 		case pop:
 			if(sp <= -1) {
