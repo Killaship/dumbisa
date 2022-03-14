@@ -56,7 +56,7 @@ void execute(int instruction) { // Giant switch statement, basically.
 			break;
 		case pop:
 			if(sp <= -1) {
-				printf("Error: program tried to pop a nonexistent value.");
+				printf("\nError: program tried to pop a nonexistent value.\n");
 				running = false;
 				break;
 			}
