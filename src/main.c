@@ -3,7 +3,7 @@
 typedef enum {
 	a, b, c, d, stp, inp, numregisters // Four general-purpose registers, stack pointer, instruction pointer
 	} reg;
-static int registers[numregisters]; // Declaration of the registers' array
+int registers[numregisters]; // Declaration of the registers' array
 typedef enum {
 	push, pop, add, hlt, set
 	} isa; // ISA contained in a typedef enum
