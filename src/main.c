@@ -10,8 +10,8 @@ typedef enum {
 bool running = true; // Runs by default, duh
 int stack[128];
 
-#define sp (stp)
-#define sp (inp)
+#define sp (registers[stp])
+#define ip (registers[inp])
 
 
 const int prgm[16] = { // Program
