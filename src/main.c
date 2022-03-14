@@ -39,8 +39,8 @@ void execute(int instruction) { // Giant switch statement, basically.
 			printf("Done!\n");
 			break;
 		case add:
-			x = stack[--sp--];
-			y = stack[--sp--];
+			x = stack[sp - 1];
+			y = stack[sp - 1];
 			sum = y + x;
 			sp++;
 			stack[sp] = sum;
@@ -59,7 +59,7 @@ void execute(int instruction) { // Giant switch statement, basically.
 				running = false;
 				break;
 			}
-			popval = stack[sp--];
+			popval = stack[sp - 1];
 			registers[a] = popval;
 			printf("popped %d\n", popval);
 			printf("%d", sp);
