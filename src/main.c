@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdbool.h>
-//typedef enum {
-//	a, b, c, d, sp, ip, numregisters // Four general-purpose registers, stack pointer, instruction pointer
-//	} reg;
-//int registers[numregisters]; // Declaration of the registers' arra#y
+typedef enum {
+	a, b, c, dnumregisters // Four general-purpose registers, stack pointer, instruction pointer
+	} reg;
+int registers[numregisters]; // Declaration of the registers' arra#y
 typedef enum {
 	push, pop, add, hlt, set, pushr
 	} isa; // ISA contained in a typedef enum
@@ -12,8 +12,7 @@ int stack[128];
 
 int ip = 0;
 int sp = -1;
-//#define sp (registers[sp])
-//#define ip (registers[ip])
+
 
 
 const int prgm[32] = {
@@ -21,8 +20,6 @@ const int prgm[32] = {
 	push, 2,
 	add,
 	pop,
-	//set, b, 4,
-	//pushr, b,
 	hlt
 };
 
@@ -61,16 +58,13 @@ void execute(int instruction) { // Giant switch statement, basically.
 			printf("popped %d\n", popval);
 			printf("Current SP is %d.\n", sp);
 			break;
-		/*case set:
-			registers[prgm[ip + 1]] = prgm[ip + 2];
-			ip = ip + 2;
-			break;*/
+		case jmp:
+			ip = prgm[ip + 1];
+			break;
 	}
 }
 
 int main(void) {
-	sp = -1;
-	ip = 0;
 	while(running) {
 		execute(fetch());
 		ip++;
