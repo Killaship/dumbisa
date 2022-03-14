@@ -42,15 +42,15 @@ void execute(int instruction) { // Giant switch statement, basically.
 			x = stack[sp - 1];
 			y = stack[sp - 1];
 			sum = y + x;
-			sp++;
+			sp = sp + 1;
 			stack[sp] = sum;
 			break;
 		case push:
-			sp++;
+			sp = sp + 1;
 			stack[sp] = prgm[++ip];
 			break;
 		case pushr:
-			sp++;
+			sp = sp + 1;
 			stack[sp] = registers[++ip];
 			break;
 		case pop:
