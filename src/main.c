@@ -64,7 +64,7 @@ void execute(int instruction) { // Giant switch statement, basically.
 			break;
 		case set:
 		
-			registers[ip + 1] = instructions[ip + 2];
+			registers[prgm[ip + 1]] = prgm[ip + 2];
             		ip = ip + 2;
 			break;
 	}
