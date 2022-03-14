@@ -21,6 +21,7 @@ const int prgm[16] = { // Program
 	push, 2,
 	add,
 	pop,
+	jmp, 0
 	hlt
 };
 
@@ -53,6 +54,8 @@ void execute(int instruction) { // Giant switch statement, basically.
 			popval = stack[sp--];
 			printf("popped %d\n", popval);
 			break;
+		case jmp:
+			ip = prgm[++ip];
 	}
 }
 
