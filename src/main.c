@@ -24,7 +24,7 @@ const int prgm[32] = {
 };
 
 int fetch() {
-	return prgm[p];
+	return prgm[sp];
 }
 
 void execute(int instruction) {
