@@ -5,7 +5,7 @@ typedef enum {
 	} reg;
 static int registers[numregisters]; // Declaration of the registers' array
 typedef enum {
-	push, pop, add, hlt
+	push, pop, add, hlt, jmp
 	} isa; // ISA contained in a typedef enum
 bool running = true; // Runs by default, duh
 int stack[64];
