@@ -49,24 +49,18 @@ void execute(int instruction) { // Giant switch statement, basically.
 			sp = sp + 1;
 			stack[sp] = prgm[++ip];
 			break;
-		case pushr:
+	/*	case pushr:
 			sp = sp + 1;
 			stack[sp] = registers[++ip];
-			break;
+			break; */
 		case pop:
-			if(sp <= -1) {
-				printf("\nError: program tried to pop a nonexistent value.\n");
-				running = false;
-				break;
-			}
 			popval = stack[sp - 1];
-			registers[a] = popval;
 			printf("popped %d\n", popval);
 			printf("%d", sp);
 			break;
 		case set:
 			registers[prgm[ip + 1]] = prgm[ip + 2];
-            		ip = ip + 2;
+			ip = ip + 2;
 			break;
 	}
 }
