@@ -16,7 +16,7 @@ int sp = -1;
 
 
 const int prgm[32] = {
-	push, 0,
+	push, 4,
 	push, 4,
 	
 	pop,
