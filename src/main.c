@@ -20,7 +20,7 @@ const int prgm[32] = {
 	push, 4,
 	
 	pop,
-	jmp, 0
+	jmp, 0,
 	hlt
 };
 
