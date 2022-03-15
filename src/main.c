@@ -16,7 +16,7 @@ int sp = -1;
 
 
 const int prgm[32] = {
-	jmp, 3,
+	jmp, 2,
 	hlt
 };
 
