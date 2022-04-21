@@ -60,13 +60,12 @@ void execute(int instruction) { // Giant switch statement, basically.
 			break;
 		case print:
 			
-			for(int i = 1; i < prgm[++ip]; i++) {
-				pchar = stack[--sp];
+			for(int i = 1; i < prgm[ip++]; i++) {
+				pchar = stack[sp--];
 				printf("%c", pchar);
 				pchar = 0;
 			}
 			printf("\n");
-			ip++;
 			break;
 		//case mov:
 		//	break;
