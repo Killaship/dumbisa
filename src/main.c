@@ -16,8 +16,8 @@ int sp = -1;
 
 
 const int prgm[32] = {
-	push, 'h',
 	push, 'i',
+	push, 'h',
 	print, 2,
 	hlt
 };
@@ -59,7 +59,7 @@ void execute(int instruction) { // Giant switch statement, basically.
 			printf("Current SP is %d.\n", sp);
 			break;
 		case print:
-			for(int i = 0; i < prgm[++ip]; i++) {
+			for(int i = 1; i < prgm[++ip]; i++) {
 				pchar = stack[sp--];
 				printf("%c", pchar);
 			}
