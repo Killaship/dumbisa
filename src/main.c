@@ -31,7 +31,7 @@ void execute(int instruction) { // Giant switch statement, basically.
 	int y;
 	int sum;
 	int popval;
-	char char = 0;
+	char pchar = 0;
 	switch(instruction) {
 		case hlt:
 			running = false;
@@ -60,8 +60,8 @@ void execute(int instruction) { // Giant switch statement, basically.
 			break;
 		case print:
 			for(int i = ; i < prgm[++ip]; i++) {
-				char = stack[sp--];
-				printf("%c", char);
+				pchar = stack[sp--];
+				printf("%c", pchar);
 			}
 			printf("\n");
 			break;
