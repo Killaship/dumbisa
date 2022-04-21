@@ -59,8 +59,9 @@ void execute(int instruction) { // Giant switch statement, basically.
 			printf("Current SP is %d.\n", sp);
 			break;
 		case print:
+			
 			for(int i = 1; i < prgm[++ip]; i++) {
-				pchar = stack[sp--];
+				pchar = stack[--sp];
 				printf("%c", pchar);
 				pchar = 0;
 			}
