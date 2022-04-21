@@ -65,6 +65,7 @@ void execute(int instruction) { // Giant switch statement, basically.
 				pchar = 0;
 			}
 			printf("\n");
+			ip++;
 			break;
 		//case mov:
 		//	break;
