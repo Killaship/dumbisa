@@ -62,6 +62,7 @@ void execute(int instruction) { // Giant switch statement, basically.
 			for(int i = 1; i < prgm[++ip]; i++) {
 				pchar = stack[sp--];
 				printf("%c", pchar);
+				pchar = 0;
 			}
 			printf("\n");
 			break;
