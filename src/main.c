@@ -5,7 +5,7 @@ typedef enum {
 	} reg;
 int registers[numregisters]; // Declaration of the registers' arra#y
 typedef enum {
-	push, pop, add, hlt, mov, pushr, jmp
+	push, pop, add, hlt, mov, pushr, jmp, print
 	} isa; // ISA contained in a typedef enum
 bool running = true; // Runs by default, duh
 int stack[128];
@@ -16,10 +16,9 @@ int sp = -1;
 
 
 const int prgm[32] = {
-	push, 2,
-	push, 2,
-	add,
-	pop,
+	push, 'h',
+	push, 'i',
+	print, 2
 	hlt
 };
 
@@ -32,6 +31,7 @@ void execute(int instruction) { // Giant switch statement, basically.
 	int y;
 	int sum;
 	int popval;
+	char char = 0;
 	switch(instruction) {
 		case hlt:
 			running = false;
@@ -58,11 +58,18 @@ void execute(int instruction) { // Giant switch statement, basically.
 			printf("popped %d\n", popval);
 			printf("Current SP is %d.\n", sp);
 			break;
-		case mov:
+		case print:
+			for(int i = ; i < prgm[++ip]; i++) {
+				char = stack[sp--];
+				printf("%c", char);
+			}
+			printf("\n");
 			break;
-		case jmp:
-			ip = prgm[ip + 1];
-			break;
+		//case mov:
+		//	break;
+		//case jmp:
+		//	ip = prgm[ip + 1];
+		//	break;
 	}
 }
 
